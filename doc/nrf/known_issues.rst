@@ -185,6 +185,16 @@ nRF5340
 
 .. rst-class:: v1-5-1 v1-5-0 v1-4-2 v1-4-1 v1-4-0
 
+NCSDK-9786: Wrong FLASH_PAGE_ERASE_MAX_TIME_US for the nRF53 network core
+  ``FLASH_PAGE_ERASE_MAX_TIME_US`` defines the execution window duration when doing the flash operation synchronously along the radio operations (:option:`CONFIG_SOC_FLASH_NRF_PARTIAL_ERASE` not enabled).
+
+  The ``FLASH_PAGE_ERASE_MAX_TIME_US`` value of the nRF53 network core is lower than required.
+  For this reason, if :option:`CONFIG_SOC_FLASH_NRF_RADIO_SYNC_MPSL` is set to ``y`` and :option:`CONFIG_SOC_FLASH_NRF_PARTIAL_ERASE` is set to ``n``, a flash erase operation on the nRF5340 network core will result in an MPSL timeslot OVERSTAYED assert.
+
+  **Workaround:** Increase ``FLASH_PAGE_ERASE_MAX_TIME_US`` (defined in :file:`ncs/zephyr/soc/arm/nordic_nrf/nrf53/soc.h`) from 44850UL to 89700UL (the same value as for the application core).
+
+.. rst-class:: v1-5-1 v1-5-0 v1-4-2 v1-4-1 v1-4-0
+
 NCSDK-7234: UART output is not received from the network core
   The UART output is not received from the network core if the application core is programmed and running with a non-secure image (using the ``nrf5340dk_nrf5340_cpuappns`` build target).
 
@@ -1229,6 +1239,18 @@ NCSDK-8372: Project name collision causes SES Nordic Edition to load the wrong p
 
   **Workaround:** If the path in :guilabel:`Build Directory` points to the wrong project, select the correct project by using the :guilabel:`...` button for :guilabel:`Projects` and navigating to the correct project location.
   The build directory will update automatically.
+
+Toolchain
+*********
+
+.. rst-class:: v1-5-1 v1-5-0
+
+Some versions of the GNU Arm Embedded toolchain do not work correctly when building samples based on TF-M
+  The GNU Arm Embedded Toolchain, versions *9-2020-q2-update* and *10-2020-q4-major*, do not work correctly when compiling binaries for Cortex-M Secure Extensions.
+  This issue affects all the samples based on TF-M.
+  For more information, see `here <https://github.com/zephyrproject-rtos/zephyr/issues/34658#issuecomment-828422111>`_.
+
+  **Workaround:** When building with TF-M, do not use the mentioned versions of the toolchain.
 
 ----
 

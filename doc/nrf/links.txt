@@ -86,15 +86,16 @@
 
 .. _`SMP over Bluetooth`: https://github.com/apache/mynewt-mcumgr/blob/master/transport/smp-bluetooth.md
 
-.. _`Android CHIPTool`: https://github.com/nrfconnect/sdk-connectedhomeip/tree/b35e8e/src/android/CHIPTool
-.. _`Working with Android Controller`:
-.. _`Commissioning nRF Connect Accessory using Android CHIPTool`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/b35e8e/docs/guides/nrfconnect_android_commissioning.md
-.. _`Working with Python Controller`: https://github.com/project-chip/connectedhomeip/blob/master/src/controller/python/README.md
-.. _`Matter Protocol Overview`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/b35e8e/README.md
-.. _`nRF Connect platform overview`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/b35e8e/docs/guides/nrfconnect_platform_overview.md
-.. _`other controller setups`: https://github.com/nrfconnect/sdk-connectedhomeip/tree/b35e8e/src/controller
+.. _`Android CHIPTool`: https://github.com/nrfconnect/sdk-connectedhomeip/tree/933fb4/src/android/CHIPTool
+.. _`Commissioning nRF Connect Accessory using Android CHIPTool`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/933fb4/docs/guides/nrfconnect_android_commissioning.md
+.. _`Working with Python Controller`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/933fb4/src/controller/python/README.md
+.. _`Performing Device Firmware Upgrade in Matter device`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/933fb4/docs/guides/nrfconnect_examples_software_update.md
+.. _`Matter Protocol Overview`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/933fb4/README.md
+.. _`nRF Connect platform overview`: https://github.com/nrfconnect/sdk-connectedhomeip/blob/933fb4/docs/guides/nrfconnect_platform_overview.md
+.. _`other controller setups`: https://github.com/nrfconnect/sdk-connectedhomeip/tree/933fb4/src/controller
 
 .. _`Azure support for Asset Tracker v2`: https://github.com/nrfconnect/sdk-nrf/pull/3950
+.. _`nRF Cloud JSON protocol schemas`: https://github.com/nRFCloud/application-protocols
 
 .. _`Pelion Device Management Client library reference example`: https://github.com/PelionIoT/mbed-cloud-client-example
 
@@ -102,11 +103,13 @@
 
 .. _`TinyCBOR`: https://intel.github.io/tinycbor/current/
 
-.. _`Timestamping`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/docs/guides/FourKindsOfData.html#timestamping
+.. _`Timestamping`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/guides/FourKindsOfData.html#time-stamping
 
-.. _`nRF Asset Tracker for AWS`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/docs/aws/Index.html
-.. _`nRF Asset Tracker web application`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/docs/app/Index.html
-.. _`Getting started guide for nRF Asset Tracker for AWS`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.5.x/docs/aws/GettingStarted.html
+.. _`nRF Asset Tracker for AWS`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/aws/Index.html
+.. _`nRF Asset Tracker for Azure`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/azure/Index.html
+.. _`nRF Asset Tracker web application`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/app/Index.html
+.. _`Getting started guide for nRF Asset Tracker for AWS`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/aws/GettingStarted/Index.html
+.. _`Getting started guide for nRF Asset Tracker for Azure`: https://nordicsemiconductor.github.io/asset-tracker-cloud-docs/v1.6.x/docs/azure/GettingStarted/Index.html
 
 .. ### Source: developer.nordicsemi.com
 
@@ -128,11 +131,14 @@
 .. _`known issues for nRF Connect SDK v1.4.0`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/latest/nrf/known_issues.html?v=v1-4-0
 
 .. _`API documentation`:
-.. _`external ZBOSS development guide and API documentation`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.5.2.0/zigbee_devguide.html
-.. _`Stack commissioning start sequence`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.5.2.0/using_zigbee__z_c_l.html#stack_start_initiation
-.. _`ZBOSS NCP Host`: https://developer.nordicsemi.com/Zigbee/ncp_sdk_for_host/ncp_host_v0.9.4.zip
-.. _`process the frame`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.5.2.0/using_zigbee__z_c_l.html#process_zcl_cmd
-.. _`declaring custom cluster`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.5.2.0/using_zigbee__z_c_l.html#cluster_declaration_custom
+.. _`external ZBOSS development guide and API documentation`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/zigbee_devguide.html
+.. _`Stack commissioning start sequence`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/using_zigbee__z_c_l.html#stack_start_initiation
+.. _`ZBOSS NCP Host`: https://developer.nordicsemi.com/Zigbee/ncp_sdk_for_host/ncp_host_v0.9.5.zip
+.. _`NCP Host documentation`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/zboss_ncp_host_intro.html
+.. _`process the frame`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/using_zigbee__z_c_l.html#process_zcl_cmd
+.. _`declaring custom cluster`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/using_zigbee__z_c_l.html#cluster_declaration_custom
+.. _`Configuring sleepy behavior for end devices`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/zigbee_prog_principles.html#zigbee_power_optimization_sleepy
+.. _`zboss_signal_handler()`: https://developer.nordicsemi.com/nRF_Connect_SDK/doc/zboss/3.6.0.0/group__zb__comm__signals.html#gae05c0ff285cfd03e0997fe438e8047fc
 
 .. ### Source: www.nordicsemi.com
 
@@ -250,6 +256,8 @@
 
 .. _`nRF Util`: https://infocenter.nordicsemi.com/index.jsp?topic=%2Fug_nrfutil%2FUG%2Fnrfutil%2Fnrfutil_intro.html
 .. _`DFU over Zigbee`: https://infocenter.nordicsemi.com/topic/ug_nrfutil/UG/nrfutil/nrfutil_dfu_zigbee.html
+.. _`Generating DFU packages`: https://infocenter.nordicsemi.com/topic/ug_nrfutil/UG/nrfutil/nrfutil_pkg.html
+.. _`DFU over a serial USB connection`: https://infocenter.nordicsemi.com/topic/ug_nrfutil/UG/nrfutil/nrfutil_dfu_serial_usb.html
 
 .. _`nRF Thread Topology Monitor`: https://infocenter.nordicsemi.com/topic/ug_nrf_ttm/UG/nrf_ttm/ttm_introduction.html
 .. _`nRF Sniffer for 802.15.4`: https://infocenter.nordicsemi.com/topic/ug_sniffer_802154/UG/sniffer_802154/intro_802154.html
@@ -264,6 +272,10 @@
 .. _`System Protection Unit`: https://infocenter.nordicsemi.com/topic/ps_nrf9160/spu.html
 
 .. _`nRF9160 Hardware Verification Guidelines - UART interface`: https://infocenter.nordicsemi.com/topic/nwp_034/WP/nwp_034/nwp_034_uart_if.html
+
+.. _`Creating an nRF Cloud account`: https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/common/create_nrfcloud_account.html
+
+.. _`Connecting your device to nRF Cloud`: https://infocenter.nordicsemi.com/topic/ug_nrf91_dk_gsg/UG/nrf91_DK_gsg/connecting_nrf_cloud.html
 
 .. ### Source: devzone.nordicsemi.com
 
@@ -353,6 +365,7 @@
 .. _`Azure IoT Explorer`: https://docs.microsoft.com/en-us/azure/iot-pnp/howto-use-iot-explorer
 .. _`Azure Blob Storage`: https://docs.microsoft.com/en-us/azure/storage/blobs/storage-blobs-introduction
 .. _`Azure IoT Hub device twin messages`: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-devguide-device-twins
+.. _`Azure Device Update for IoT Hub`: https://docs.microsoft.com/nb-no/azure/iot-hub-device-update/
 .. _`Device enrollments with Azure Portal`: https://docs.microsoft.com/en-us/azure/iot-dps/how-to-manage-enrollments
 .. _`Add certificates to the DPS instance`: https://docs.microsoft.com/en-us/azure/iot-dps/how-to-verify-certificates
 .. _`Registering the device with Azure IoT Hub`: https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal#register-a-new-device-in-the-iot-hub
@@ -510,6 +523,15 @@
 .. _`Pelion Manifest Tool`: https://developer.pelion.com/docs/device-management/v4.7/updating-firmware/manifest-tool.html
 .. _`Zephyr integration tutorial`: https://developer.pelion.com/docs/device-management/current/connecting/zephyr.html
 
+.. ### Source: memfault.com
+
+.. _`Memfault`: https://memfault.com/
+.. _`Memfault Docs`: https://docs.memfault.com/
+.. _`Memfault SDK`: https://docs.memfault.com/docs/embedded/introduction/
+.. _`Memfault Terminology`: https://docs.memfault.com/docs/platform/memfault-terminology/
+.. _`Memfault: Collecting Device Metrics`: https://docs.memfault.com/docs/embedded/metrics-api
+.. _`Memfault: Error Tracking with Trace Events`: https://docs.memfault.com/docs/embedded/trace-events/
+
 .. ### Source: other
 
 .. _`Pelion Device Management Portal`: https://portal.mbedcloud.com/login
@@ -527,9 +549,20 @@
 .. _`nRF Mesh mobile app for iOS`: https://apps.apple.com/us/app/nrf-mesh/id1380726771
 .. _`nRF Mesh mobile app for Android`: https://play.google.com/store/apps/details?id=no.nordicsemi.android.nrfmeshprovisioner
 
+.. _`nRF Cloud`:
 .. _`nRF Connect for Cloud`: https://nrfcloud.com/
 
+
+
+.. _`nRF Cloud documentation`:
+.. _`nRF Connect for Cloud documentation`: https://nrfcloud.com/#/docs
+
+.. _`nRF Cloud Patch Device State`: https://api.nrfcloud.com/v1#operation/UpdateDeviceState
+
+.. _`nRF Cloud Device API`:
 .. _`nRF Connect for Cloud Device API`: https://api.nrfcloud.com/v1
+
+.. _`nRF Cloud Location Services`: https://api.nrfcloud.com/v1#tag/Location-Services
 
 .. _`NFC Forum specification overview`: https://nfc-forum.org/our-work/specification-releases/specifications/
 .. _`Bluetooth Secure Simple Pairing Using NFC`: https://nfc-forum.org/our-work/specification-releases/specifications/#010ea0b1006cf5b44
@@ -589,6 +622,8 @@
 
 .. _`Git`: https://git-scm.com/
 
+.. _`Go language package`: https://golang.org/doc/install
+
 .. _`reStructuredText Primer`: https://www.sphinx-doc.org/en/master/usage/restructuredtext/basics.html
 
 .. _`mscgen`: http://www.mcternan.me.uk/mscgen/
@@ -623,6 +658,8 @@
 
 .. _`public Leshan Demo Server`: https://leshan.eclipseprojects.io
 
+.. _`Silvair EnOcean Switch Mesh Proxy Server`: https://silvair.com/resources/product-documents/
+
 .. _`Thread Group's Confluence wiki page`: https://threadgroup.atlassian.net/wiki/spaces/THREADTEST/pages/25900869/Supporting+Material
 
 .. _`JSON Web Token (JWT)`: https://jwt.io/introduction
@@ -630,3 +667,7 @@
 .. _`Semantic versioning`: https://semver.org/
 
 .. _`mbedtls_memory_buffer_alloc_init`: https://tls.mbed.org/api/memory__buffer__alloc_8h.html#ac70d134be54133c272d8eab2cb85dfbf
+
+.. _`HERE Positioning`: https://www.here.com/platform/tracking-positioning-solutions/positioning
+
+.. _`Skyhook Precision Location`: https://www.skyhook.com/precision-location

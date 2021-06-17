@@ -100,17 +100,6 @@ static int pub(struct bt_mesh_plvl_srv *srv, struct bt_mesh_msg_ctx *ctx,
 	return model_send(srv->plvl_model, ctx, &msg);
 }
 
-static void transition_get(struct bt_mesh_plvl_srv *srv,
-			   struct bt_mesh_model_transition *transition,
-			   struct net_buf_simple *buf)
-{
-	if (buf->len == 2) {
-		model_transition_buf_pull(buf, transition);
-	} else {
-		bt_mesh_dtt_srv_transition_get(srv->plvl_model, transition);
-	}
-}
-
 static void rsp_plvl_status(struct bt_mesh_model *model,
 			    struct bt_mesh_msg_ctx *ctx,
 			    struct bt_mesh_plvl_status *status)
@@ -180,14 +169,13 @@ static void plvl_set(struct bt_mesh_model *model, struct bt_mesh_msg_ctx *ctx,
 
 	set.power_lvl = net_buf_simple_pull_le16(buf);
 	tid = net_buf_simple_pull_u8(buf);
-	transition_get(srv, &transition, buf);
-	set.transition = &transition;
+	set.transition = model_transition_get(srv->plvl_model, &transition, buf);
 
 	if (!tid_check_and_update(&srv->tid, tid, ctx)) {
 		change_lvl(srv, ctx, &set, &status);
 
 		if (IS_ENABLED(CONFIG_BT_MESH_SCENE_SRV)) {
-			bt_mesh_scene_invalidate(&srv->scene);
+			bt_mesh_scene_invalidate(srv->plvl_model);
 		}
 	} else if (ack) {
 		srv->handlers->power_get(srv, NULL, &status);
@@ -536,10 +524,10 @@ static void lvl_move_set(struct bt_mesh_lvl_srv *lvl_srv,
 		target = status.current;
 	}
 
-	struct bt_mesh_model_transition transition = { 0 };
+	struct bt_mesh_model_transition transition;
 	struct bt_mesh_plvl_set set = {
 		.power_lvl = target,
-		.transition = &transition,
+		.transition = NULL,
 	};
 
 	if (move_set->delta != 0 && move_set->transition) {
@@ -552,6 +540,7 @@ static void lvl_move_set(struct bt_mesh_lvl_srv *lvl_srv,
 		if (time_to_edge > 0) {
 			transition.delay = move_set->transition->delay;
 			transition.time = time_to_edge;
+			set.transition = &transition;
 		}
 	}
 
@@ -644,7 +633,8 @@ static void scene_recall(struct bt_mesh_model *model, const uint8_t data[],
 	change_lvl(srv, NULL, &set, &status);
 }
 
-static const struct bt_mesh_scene_entry_type scene_type = {
+BT_MESH_SCENE_ENTRY_SIG(plvl) = {
+	.id.sig = BT_MESH_MODEL_ID_GEN_POWER_LEVEL_SRV,
 	.maxlen = 2,
 	.store = scene_store,
 	.recall = scene_recall,
@@ -713,10 +703,6 @@ static int bt_mesh_plvl_srv_init(struct bt_mesh_model *model)
 		bt_mesh_model_find(
 			bt_mesh_model_elem(model),
 			BT_MESH_MODEL_ID_GEN_POWER_LEVEL_SETUP_SRV));
-
-	if (IS_ENABLED(CONFIG_BT_MESH_SCENE_SRV)) {
-		bt_mesh_scene_entry_add(model, &srv->scene, &scene_type, false);
-	}
 
 	return 0;
 }
